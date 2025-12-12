@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="tr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maja Luxury Hotel Çeşme | Strateji Raporu</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            gold: '#D4AF37',
+                            dark: '#0f172a',
+                            blue: '#1e3a8a',
+                            light: '#f8f9fa',
+                            gray: '#64748b'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #D4AF37;
+            border-radius: 4px;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.8)), url('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .section-header::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: #D4AF37;
+            margin-top: 1rem;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="font-sans text-slate-800 bg-slate-50 antialiased">
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-white/90 backdrop-blur-md shadow-sm py-4">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <i class="fa-solid fa-crown text-brand-gold text-2xl"></i>
+                <span class="font-serif text-xl font-bold text-brand-dark tracking-wide">MAJA <span class="text-brand-gold">LUXURY</span></span>
+            </div>
+            <div class="hidden md:flex space-x-8 text-sm font-medium text-slate-600">
+                <a href="#ozet" class="hover:text-brand-gold transition">Özet & Durum</a>
+                <a href="#rekabet" class="hover:text-brand-gold transition">Rekabet</a>
+                <a href="#swot" class="hover:text-brand-gold transition">SWOT</a>
+                <a href="#strateji" class="hover:text-brand-gold transition">Dijital Strateji</a>
+                <a href="#takvim" class="hover:text-brand-gold transition">Takvim</a>
+                <a href="#kpi" class="hover:text-brand-gold transition">KPI & Sonuç</a>
+            </div>
+            <button class="md:hidden text-slate-600 focus:outline-none" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+                <i class="fa-solid fa-bars text-2xl"></i>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t p-4 absolute w-full shadow-lg">
+            <div class="flex flex-col space-y-4">
+                <a href="#ozet" class="block text-slate-600 hover:text-brand-gold">Özet & Durum</a>
+                <a href="#rekabet" class="block text-slate-600 hover:text-brand-gold">Rekabet</a>
+                <a href="#swot" class="block text-slate-600 hover:text-brand-gold">SWOT</a>
+                <a href="#strateji" class="block text-slate-600 hover:text-brand-gold">Dijital Strateji</a>
+                <a href="#kpi" class="block text-slate-600 hover:text-brand-gold">KPI & Sonuç</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-gradient h-screen flex items-center justify-center text-white relative">
+        <div class="text-center max-w-4xl px-6 reveal active">
+            <p class="text-brand-gold font-medium tracking-[0.2em] mb-4 uppercase text-sm md:text-base">More Dijital Ajans Sunar</p>
+            <h1 class="font-serif text-5xl md:text-7xl font-bold mb-6 leading-tight">Maja Luxury Hotel Çeşme</h1>
+            <p class="text-xl md:text-2xl font-light text-slate-200 mb-8">Derinlemesine Marka Analizi ve <br> 1 Yıllık Dijital Pazarlama Stratejisi</p>
+            <a href="#ozet" class="inline-block bg-brand-gold text-white px-8 py-3 rounded-full font-medium hover:bg-yellow-600 transition duration-300 shadow-lg hover:shadow-brand-gold/50">
+                Raporu İncele
+            </a>
+        </div>
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <i class="fa-solid fa-chevron-down text-white/50 text-2xl"></i>
+        </div>
+    </header>
+
+    <!-- Section 1: Marka Özeti ve Mevcut Durum -->
+    <section id="ozet" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="reveal">
+                    <h2 class="font-serif text-3xl md:text-4xl font-bold text-brand-dark mb-6 section-header">Otel ve Marka Özeti</h2>
+                    <p class="text-slate-600 mb-4 leading-relaxed">
+                        Maja Luxury Hotel Çeşme, Ege’nin incisi Çeşme’nin kalbinde, denize sıfır konumda 104 odalı bir butik resort otelidir. Modern Alaçatı mimarisiyle tasarlanan otel, “sade lüks” konseptiyle misafirlerine doğa ile iç içe huzurlu bir tatil deneyimi sunar.
+                    </p>
+                    <p class="text-slate-600 mb-6 leading-relaxed">
+                        25.000 m²’lik alana yayılan tesis; Günay Restaurant, Monarch Beach Club, Maja Mare Beach Club ve Avalon Night Club gibi mekanlarıyla yalnızca konaklama değil, bir eğlence destinasyonu kimliği taşır.
+                    </p>
+                    
+                    <div class="grid grid-cols-2 gap-4 mt-8">
+                        <div class="flex items-center space-x-3 p-4 bg-slate-50 rounded-lg border border-slate-100">
+                            <i class="fa-solid fa-hotel text-brand-gold text-2xl"></i>
+                            <div>
+                                <div class="font-bold text-brand-dark">104 Oda</div>
+                                <div class="text-xs text-slate-500">Deniz Manzaralı</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-3 p-4 bg-slate-50 rounded-lg border border-slate-100">
+                            <i class="fa-solid fa-star text-brand-gold text-2xl"></i>
+                            <div>
+                                <div class="font-bold text-brand-dark">#163 Sıra</div>
+                                <div class="text-xs text-slate-500">Çeşme Bölgesi (TripAdvisor)</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative reveal delay-200">
+                    <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Maja Luxury Hotel Ambiyans" class="rounded-xl shadow-2xl w-full h-auto object-cover">
+                    <div class="absolute -bottom-6 -left-6 bg-brand-dark p-6 rounded-lg shadow-xl text-white max-w-xs hidden md:block">
+                        <p class="font-serif italic">"Sade lüks konseptiyle doğa ile iç içe huzurlu bir tatil."</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mevcut Durum Kartları -->
+            <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 reveal">
+                <div class="bg-slate-50 p-8 rounded-xl border-t-4 border-brand-gold shadow-sm hover:shadow-md transition">
+                    <h3 class="font-bold text-xl mb-3 text-brand-dark"><i class="fa-solid fa-chart-line mr-2"></i>Mevcut Durum</h3>
+                    <p class="text-sm text-slate-600">2024 yazı doluluk oranlarında sektör geneli düşüş yaşandı. Maja, genç kitlede popüler olsa da aile ve üst segment memnuniyetinde dalgalanmalar mevcut. TripAdvisor puanı 3.5/5 seviyesinde.</p>
+                </div>
+                <div class="bg-slate-50 p-8 rounded-xl border-t-4 border-blue-800 shadow-sm hover:shadow-md transition">
+                    <h3 class="font-bold text-xl mb-3 text-brand-dark"><i class="fa-solid fa-bullseye mr-2"></i>Birincil Hedefler</h3>
+                    <ul class="text-sm text-slate-600 space-y-2 list-disc list-inside">
+                        <li>Direkt rezervasyonlarda %20-30 artış.</li>
+                        <li>TripAdvisor puanını 4.0+ seviyesine çekmek.</li>
+                        <li>Web trafiği ve marka bilinirliğinde %50+ artış.</li>
+                    </ul>
+                </div>
+                <div class="bg-slate-50 p-8 rounded-xl border-t-4 border-gray-500 shadow-sm hover:shadow-md transition">
+                    <h3 class="font-bold text-xl mb-3 text-brand-dark"><i class="fa-solid fa-users mr-2"></i>Hedef Kitle</h3>
+                    <p class="text-sm text-slate-600">
+                        <strong>Yurt İçi:</strong> İstanbul, Ankara, İzmir (Orta-Üst Gelir).<br>
+                        <strong>Yurt Dışı:</strong> Almanya, İngiltere, Orta Doğu.<br>
+                        <strong>Segmentler:</strong> Balayı çiftleri, Genç yetişkinler, Lüks arayan aileler.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2: Rekabet Analizi -->
+    <section id="rekabet" class="py-20 bg-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="font-serif text-3xl md:text-4xl font-bold text-center text-brand-dark mb-12 reveal">Rekabet Analizi & Konumlandırma</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 reveal">
+                <!-- Rakip 1 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-lg hover:-translate-y-2 transition duration-300 group">
+                    <div class="h-2 bg-brand-dark"></div>
+                    <div class="p-6">
+                        <h3 class="font-serif font-bold text-lg mb-2 group-hover:text-brand-gold transition">Biblos Resort</h3>
+                        <div class="flex text-yellow-400 text-xs mb-2">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+                            <span class="text-gray-400 ml-2">(4.6/5)</span>
+                        </div>
+                        <p class="text-xs text-slate-500 mb-4">"Sofistike Lüks"</p>
+                        <p class="text-sm text-slate-600">Bölgenin en üst segmenti. Özel kum plaj ve üst düzey SPA. Fiyat skalası en yüksek rakip.</p>
+                    </div>
+                </div>
+
+                <!-- Rakip 2 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-lg hover:-translate-y-2 transition duration-300 group">
+                    <div class="h-2 bg-brand-gold"></div>
+                    <div class="p-6">
+                        <h3 class="font-serif font-bold text-lg mb-2 group-hover:text-brand-gold transition">Reges, a Luxury Collection</h3>
+                        <div class="flex text-yellow-400 text-xs mb-2">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+                            <span class="text-gray-400 ml-2">(Çeşme'nin En İyisi)</span>
+                        </div>
+                        <p class="text-xs text-slate-500 mb-4">"Uluslararası Hizmet"</p>
+                        <p class="text-sm text-slate-600">Marriott Bonvoy zinciri. 104 oda (benzer ölçek). Hizmet kalitesi ve global ağ gücü yüksek.</p>
+                    </div>
+                </div>
+
+                <!-- Rakip 3 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-lg hover:-translate-y-2 transition duration-300 group">
+                    <div class="h-2 bg-red-700"></div>
+                    <div class="p-6">
+                        <h3 class="font-serif font-bold text-lg mb-2 group-hover:text-brand-gold transition">Swissôtel Resort</h3>
+                        <div class="flex text-yellow-400 text-xs mb-2">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+                            <span class="text-gray-400 ml-2">(#2 Lüks Liste)</span>
+                        </div>
+                        <p class="text-xs text-slate-500 mb-4">"Büyük Resort & Termal"</p>
+                        <p class="text-sm text-slate-600">398 odalı dev tesis. Ilıca Plajı üzerinde. Aileler ve termal severler için güvenilir liman.</p>
+                    </div>
+                </div>
+
+                <!-- Rakip 4 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-lg hover:-translate-y-2 transition duration-300 group">
+                    <div class="h-2 bg-blue-500"></div>
+                    <div class="p-6">
+                        <h3 class="font-serif font-bold text-lg mb-2 group-hover:text-brand-gold transition">Radisson Blu</h3>
+                        <div class="flex text-yellow-400 text-xs mb-2">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            <span class="text-gray-400 ml-2">(4.1/5)</span>
+                        </div>
+                        <p class="text-xs text-slate-500 mb-4">"Fiyat/Kalite Dengesi"</p>
+                        <p class="text-sm text-slate-600">Geniş SPA ve termal imkanlar. Aile ve çiftler için optimize edilmiş global standart.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 p-6 bg-brand-dark rounded-xl text-white text-center reveal">
+                <p class="font-serif text-xl italic">"Maja, rakiplerine göre daha butik, daha modern ve 'lifestyle' odaklı. Hem eğlenceyi hem huzuru arayan niş kitle hedeflenmeli."</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: SWOT Analizi -->
+    <section id="swot" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="font-serif text-3xl md:text-4xl font-bold text-brand-dark mb-12 section-header reveal">SWOT Analizi</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 reveal">
+                <!-- Güçlü Yönler -->
+                <div class="bg-green-50 p-6 rounded-lg border-l-4 border-green-500">
+                    <h3 class="font-bold text-xl text-green-800 mb-4 flex items-center"><i class="fa-solid fa-dumbbell mr-3"></i>Güçlü Yönler (Strengths)</h3>
+                    <ul class="space-y-2 text-sm text-slate-700">
+                        <li><i class="fa-solid fa-check text-green-500 mr-2"></i><strong>Konum:</strong> Denize sıfır, tüm odalar deniz manzaralı.</li>
+                        <li><i class="fa-solid fa-check text-green-500 mr-2"></i><strong>Olanaklar:</strong> Entegre eğlence (Beach Club, Night Club, Günay Restaurant).</li>
+                        <li><i class="fa-solid fa-check text-green-500 mr-2"></i><strong>Tasarım:</strong> Modern "sade lüks" Alaçatı mimarisi.</li>
+                        <li><i class="fa-solid fa-check text-green-500 mr-2"></i><strong>Butik Yapı:</strong> 104 oda ile kişiselleştirilmiş hizmet potansiyeli.</li>
+                    </ul>
+                </div>
+
+                <!-- Zayıf Yönler -->
+                <div class="bg-red-50 p-6 rounded-lg border-l-4 border-red-500">
+                    <h3 class="font-bold text-xl text-red-800 mb-4 flex items-center"><i class="fa-solid fa-triangle-exclamation mr-3"></i>Zayıf Yönler (Weaknesses)</h3>
+                    <ul class="space-y-2 text-sm text-slate-700">
+                        <li><i class="fa-solid fa-xmark text-red-500 mr-2"></i><strong>Marka İmajı:</strong> TripAdvisor puanı 3.5, hizmet tutarlılığı sorunları.</li>
+                        <li><i class="fa-solid fa-xmark text-red-500 mr-2"></i><strong>Plaj:</strong> Doğal kum plaj yok, platform/iskele kullanımı.</li>
+                        <li><i class="fa-solid fa-xmark text-red-500 mr-2"></i><strong>Konsept Karmaşası:</strong> Aile oteli mi, parti oteli mi? Belirsizlik.</li>
+                        <li><i class="fa-solid fa-xmark text-red-500 mr-2"></i><strong>Dijital Varlık:</strong> Web sitesi sadece Türkçe, SEO zayıf.</li>
+                    </ul>
+                </div>
+
+                <!-- Fırsatlar -->
+                <div class="bg-blue-50 p-6 rounded-lg border-l-4 border-blue-500">
+                    <h3 class="font-bold text-xl text-blue-800 mb-4 flex items-center"><i class="fa-solid fa-lightbulb mr-3"></i>Fırsatlar (Opportunities)</h3>
+                    <ul class="space-y-2 text-sm text-slate-700">
+                        <li><i class="fa-solid fa-arrow-trend-up text-blue-500 mr-2"></i><strong>Dijital Atılım:</strong> SEO ve Google Ads ile hızlı pazar payı kazanımı.</li>
+                        <li><i class="fa-solid fa-arrow-trend-up text-blue-500 mr-2"></i><strong>Yabancı Pazar:</strong> Döviz avantajı ile Avrupa ve Ortadoğu ilgisi.</li>
+                        <li><i class="fa-solid fa-arrow-trend-up text-blue-500 mr-2"></i><strong>Erken Rezervasyon:</strong> Kış aylarında yerli turist için kampanyalar.</li>
+                        <li><i class="fa-solid fa-arrow-trend-up text-blue-500 mr-2"></i><strong>Niş Pazarlama:</strong> "Lifestyle Resort" olarak net konumlanma.</li>
+                    </ul>
+                </div>
+
+                <!-- Tehditler -->
+                <div class="bg-orange-50 p-6 rounded-lg border-l-4 border-orange-500">
+                    <h3 class="font-bold text-xl text-orange-800 mb-4 flex items-center"><i class="fa-solid fa-shield-halved mr-3"></i>Tehditler (Threats)</h3>
+                    <ul class="space-y-2 text-sm text-slate-700">
+                        <li><i class="fa-solid fa-exclamation text-orange-500 mr-2"></i><strong>Ekonomi:</strong> Yüksek enflasyon ve maliyet artışları.</li>
+                        <li><i class="fa-solid fa-exclamation text-orange-500 mr-2"></i><strong>Rekabet:</strong> Büyük zincirlerin agresif fiyat politikaları.</li>
+                        <li><i class="fa-solid fa-exclamation text-orange-500 mr-2"></i><strong>Reputasyon Riski:</strong> Kötü yorumların devam etmesi pazarlamayı baltalar.</li>
+                        <li><i class="fa-solid fa-exclamation text-orange-500 mr-2"></i><strong>OTA Baskınlığı:</strong> Booking/Expedia komisyon yükü ve sıralama kaybı.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4: 1 Yıllık Strateji -->
+    <section id="strateji" class="py-20 bg-slate-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="font-serif text-3xl md:text-4xl font-bold text-brand-gold mb-4 section-header reveal">1 Yıllık Dijital Pazarlama Stratejisi</h2>
+            <p class="text-slate-400 mb-12 max-w-3xl reveal">Bütüncül yaklaşım: SEO, SEM, Sosyal Medya ve CRM ile marka bilinirliğini artırıyor, direkt rezervasyonları maksimize ediyoruz.</p>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 reveal">
+                <!-- Strateji 1: Web & SEO -->
+                <div class="bg-slate-800 p-8 rounded-xl hover:bg-slate-750 transition duration-300">
+                    <div class="w-12 h-12 bg-brand-gold/20 text-brand-gold rounded-full flex items-center justify-center text-2xl mb-6">
+                        <i class="fa-solid fa-globe"></i>
+                    </div>
+                    <h3 class="font-serif text-2xl font-bold mb-4">Web & SEO</h3>
+                    <ul class="space-y-3 text-sm text-slate-300">
+                        <li class="flex items-start"><span class="text-brand-gold mr-2">•</span> <strong>Çok Dilli Altyapı:</strong> İngilizce, Almanca site açılışı (Acil).</li>
+                        <li class="flex items-start"><span class="text-brand-gold mr-2">•</span> <strong>SEO İçerik:</strong> "Çeşme lüks otel", "Honeymoon in Cesme" odaklı blog.</li>
+                        <li class="flex items-start"><span class="text-brand-gold mr-2">•</span> <strong>Dönüşüm Odaklı Tasarım:</strong> Hızlı rezervasyon, mobil uyumlu arayüz.</li>
+                        <li class="flex items-start"><span class="text-brand-gold mr-2">•</span> <strong>Direkt Teşvik:</strong> "Web'e özel en iyi fiyat" garantisi.</li>
+                    </ul>
+                </div>
+
+                <!-- Strateji 2: Google Ads (SEM) -->
+                <div class="bg-slate-800 p-8 rounded-xl hover:bg-slate-750 transition duration-300">
+                    <div class="w-12 h-12 bg-brand-gold/20 text-brand-gold rounded-full flex items-center justify-center text-2xl mb-6">
+                        <i class="fa-brands fa-google"></i>
+                    </div>
+                    <h3 class="font-serif text-2xl font-bold mb-4">Google Ads & SEM</h3>
+                    <ul class="space-y-3 text-sm text-slate-300">
+                        <li class="flex items-start"><span class="text-brand-gold mr-2">•</span> <strong>Search Ads:</strong> Marka ve jenerik aramalar için yüksek görünürlük.</li>
+                        <li class="flex items-start"><span class="text-brand-gold mr-2">•</span> <strong>Remarketing:</strong> Siteyi ziyaret edip rezervasyon yapmayana hatırlatma bannerları.</li>
+                        <li class="flex items-start"><span class="text-brand-gold mr-2">•</span> <strong>Video Ads:</strong> YouTube TrueView ile marka hikayesi anlatımı.</li>
+                        <li class="flex items-start"><span class="text-brand-gold mr-2">•</span> <strong>Google Hotel Ads:</strong> Fiyat karşılaştırmada resmi site fiyatını öne çıkarma.</li>
+                    </ul>
+                </div>
+
+                <!-- Strateji 3: Sosyal Medya -->
+                <div class="bg-slate-800 p-8 rounded-xl hover:bg-slate-750 transition duration-300">
+                    <div class="w-12 h-12 bg-brand-gold/20 text-brand-gold rounded-full flex items-center justify-center text-2xl mb-6">
+                        <i class="fa-brands fa-instagram"></i>
+                    </div>
+                    <h3 class="font-serif text-2xl font-bold mb-4">Sosyal Medya</h3>
+                    <ul class="space-y-3 text-sm text-slate-300">
+                        <li class="flex items-start"><span class="text-brand-gold mr-2">•</span> <strong>İçerik Temaları:</strong> #MajaLife, #OdaTuru, #MavininEnGüzeli.</li>
+                        <li class="flex items-start"><span class="text-brand-gold mr-2">•</span> <strong>Reels Odaklı:</strong> Trend müziklerle kısa, dinamik otel videoları.</li>
+                        <li class="flex items-start"><span class="text-brand-gold mr-2">•</span> <strong>Influencer:</strong> Lifestyle ve seyahat fenomenleri ile işbirliği.</li>
+                        <li class="flex items-start"><span class="text-brand-gold mr-2">•</span> <strong>Hedefleme:</strong> Avrupa, Ortadoğu ve Türkiye'nin lüks segmenti.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- CRM ve Diğerleri -->
+            <div class="mt-8 bg-brand-gold/10 p-6 rounded-xl border border-brand-gold/20 reveal">
+                <h4 class="font-bold text-lg text-brand-gold mb-2">Tamamlayıcı Adımlar:</h4>
+                <p class="text-sm text-slate-300">
+                    <strong>Online İtibar:</strong> Olumsuz yorumlara profesyonel yanıt, misafir çıkışında anket. <br>
+                    <strong>Email Pazarlama:</strong> Aylık bültenler ve kişiselleştirilmiş (balayı, aile) teklifler. <br>
+                    <strong>OTA Yönetimi:</strong> Booking.com vitrin optimizasyonu ve fiyat paritesi.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 5: Takvim -->
+    <section id="takvim" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="font-serif text-3xl md:text-4xl font-bold text-center text-brand-dark mb-16 reveal">Aksiyon Takvimi</h2>
+            
+            <div class="relative border-l-4 border-brand-gold/30 ml-4 md:ml-1/2 space-y-12">
+                
+                <!-- Q1 -->
+                <div class="relative pl-8 md:pl-0 reveal">
+                    <div class="absolute -left-3 top-0 w-6 h-6 bg-brand-gold rounded-full border-4 border-white"></div>
+                    <div class="md:flex items-center justify-between group">
+                        <div class="md:w-5/12 md:text-right md:pr-8 mb-4 md:mb-0">
+                            <h3 class="font-bold text-xl text-brand-dark">Q1: Hazırlık & Erken Rezervasyon</h3>
+                            <span class="text-xs font-bold text-slate-400 uppercase">Ocak - Mart</span>
+                        </div>
+                        <div class="md:w-5/12 md:pl-8">
+                            <div class="bg-slate-50 p-4 rounded shadow-md border-l-4 border-brand-gold">
+                                <p class="text-sm text-slate-600">Web sitesi çevirileri, SEO başlangıcı. "2025 Yazı için %20 İndirim" kampanyaları. Balayı paketlerinin lansmanı.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Q2 -->
+                <div class="relative pl-8 md:pl-0 reveal">
+                    <div class="absolute -left-3 top-0 w-6 h-6 bg-brand-blue rounded-full border-4 border-white"></div>
+                    <div class="md:flex items-center justify-between flex-row-reverse group">
+                        <div class="md:w-5/12 md:text-left md:pl-8 mb-4 md:mb-0">
+                            <h3 class="font-bold text-xl text-brand-dark">Q2: Sezon Açılışı & Hype</h3>
+                            <span class="text-xs font-bold text-slate-400 uppercase">Nisan - Haziran</span>
+                        </div>
+                        <div class="md:w-5/12 md:pr-8 md:text-right">
+                            <div class="bg-slate-50 p-4 rounded shadow-md border-r-4 border-blue-600">
+                                <p class="text-sm text-slate-600">Bayram kampanyaları. Influencer davetleri. Google Ads bütçe artışı. Yaz içeriklerinin (Reels) yoğunlaşması.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Q3 -->
+                <div class="relative pl-8 md:pl-0 reveal">
+                    <div class="absolute -left-3 top-0 w-6 h-6 bg-red-500 rounded-full border-4 border-white"></div>
+                    <div class="md:flex items-center justify-between group">
+                        <div class="md:w-5/12 md:text-right md:pr-8 mb-4 md:mb-0">
+                            <h3 class="font-bold text-xl text-brand-dark">Q3: Yüksek Sezon & Deneyim</h3>
+                            <span class="text-xs font-bold text-slate-400 uppercase">Temmuz - Eylül</span>
+                        </div>
+                        <div class="md:w-5/12 md:pl-8">
+                            <div class="bg-slate-50 p-4 rounded shadow-md border-l-4 border-red-500">
+                                <p class="text-sm text-slate-600">Maksimum doluluk hedefi. Otel içi deneyim paylaşımları. Son dakika fırsatları. Marka bilinirliği zirvesi.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Q4 -->
+                <div class="relative pl-8 md:pl-0 reveal">
+                    <div class="absolute -left-3 top-0 w-6 h-6 bg-slate-500 rounded-full border-4 border-white"></div>
+                    <div class="md:flex items-center justify-between flex-row-reverse group">
+                        <div class="md:w-5/12 md:text-left md:pl-8 mb-4 md:mb-0">
+                            <h3 class="font-bold text-xl text-brand-dark">Q4: Kapanış & Gelecek Sezon</h3>
+                            <span class="text-xs font-bold text-slate-400 uppercase">Ekim - Aralık</span>
+                        </div>
+                        <div class="md:w-5/12 md:pr-8 md:text-right">
+                            <div class="bg-slate-50 p-4 rounded shadow-md border-r-4 border-slate-500">
+                                <p class="text-sm text-slate-600">Sezon sonu "Indian Summer" kampanyaları. 2026 Erken Rezervasyon hazırlığı. Yılbaşı galası tanıtımı.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 6: KPI ve Sonuç -->
+    <section id="kpi" class="py-20 bg-brand-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="font-serif text-3xl md:text-4xl font-bold text-center text-brand-dark mb-12 reveal">Hedeflenen Başarı Metrikleri (KPI)</h2>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center reveal">
+                <div class="p-6 bg-white rounded-xl shadow-sm hover:shadow-lg transition transform hover:-translate-y-1">
+                    <div class="text-4xl font-bold text-brand-gold mb-2">%30</div>
+                    <div class="text-sm text-slate-500 uppercase tracking-wide">Direkt Rezervasyon Artışı</div>
+                </div>
+                <div class="p-6 bg-white rounded-xl shadow-sm hover:shadow-lg transition transform hover:-translate-y-1">
+                    <div class="text-4xl font-bold text-brand-blue mb-2">4.0+</div>
+                    <div class="text-sm text-slate-500 uppercase tracking-wide">TripAdvisor Puan Hedefi</div>
+                </div>
+                <div class="p-6 bg-white rounded-xl shadow-sm hover:shadow-lg transition transform hover:-translate-y-1">
+                    <div class="text-4xl font-bold text-green-600 mb-2">%50+</div>
+                    <div class="text-sm text-slate-500 uppercase tracking-wide">Web Trafiği & Bilinirlik</div>
+                </div>
+                <div class="p-6 bg-white rounded-xl shadow-sm hover:shadow-lg transition transform hover:-translate-y-1">
+                    <div class="text-4xl font-bold text-purple-600 mb-2">5-8x</div>
+                    <div class="text-sm text-slate-500 uppercase tracking-wide">ROAS (Reklam Getirisi)</div>
+                </div>
+            </div>
+
+            <div class="mt-16 text-center reveal">
+                <h3 class="font-serif text-2xl font-bold text-brand-dark mb-4">Sonuç ve Öneri</h3>
+                <p class="max-w-3xl mx-auto text-slate-600 mb-8">
+                    Maja Luxury Hotel, doğru dijital strateji ve operasyonel iyileştirmelerle Çeşme'nin en gözde lifestyle oteli olma potansiyeline sahiptir. 
+                    Pazarlama vaadi ile misafir deneyimi eşleştiğinde, marka değeri katlanarak artacaktır.
+                </p>
+                <a href="#" class="inline-block bg-brand-dark text-white px-8 py-3 rounded-md font-medium hover:bg-slate-800 transition">
+                    Stratejiyi Başlat <i class="fa-solid fa-rocket ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brand-dark text-white py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center">
+            <div class="mb-4 md:mb-0">
+                <span class="font-serif text-2xl font-bold tracking-wide">MAJA <span class="text-brand-gold">LUXURY</span></span>
+                <p class="text-sm text-slate-400 mt-2">More Dijital Ajans © 2025</p>
+            </div>
+            <div class="flex space-x-6">
+                <a href="#" class="text-slate-400 hover:text-white transition"><i class="fa-brands fa-instagram text-xl"></i></a>
+                <a href="#" class="text-slate-400 hover:text-white transition"><i class="fa-brands fa-linkedin text-xl"></i></a>
+                <a href="#" class="text-slate-400 hover:text-white transition"><i class="fa-solid fa-envelope text-xl"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Scroll Reveal Animation
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 150;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+        window.addEventListener("scroll", reveal);
+        // Trigger once on load
+        reveal();
+
+        // Navbar Transition
+        window.addEventListener("scroll", function() {
+            var nav = document.getElementById("navbar");
+            if (window.scrollY > 50) {
+                nav.classList.add("shadow-lg");
+                nav.classList.replace("py-4", "py-2");
+            } else {
+                nav.classList.remove("shadow-lg");
+                nav.classList.replace("py-2", "py-4");
+            }
+        });
+    </script>
+</body>
+</html>
