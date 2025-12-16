@@ -17,16 +17,17 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <script>
+        // Tailwind konfigürasyonu
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
                         brand: {
-                            gold: '#D4AF37',
-                            dark: '#0f172a',
-                            blue: '#1e3a8a',
-                            light: '#f8f9fa',
-                            gray: '#64748b'
+                            gold: '#D4AF37', // Altın rengi
+                            dark: '#0f172a', // Koyu lacivert/siyah
+                            blue: '#1e3a8a', // Koyu mavi
+                            light: '#f8f9fa', // Çok açık gri
+                            gray: '#64748b' // Orta gri
                         }
                     },
                     fontFamily: {
@@ -39,7 +40,7 @@
     </script>
 
     <style>
-        /* Custom Scrollbar */
+        /* Özel Kaydırma Çubuğu */
         ::-webkit-scrollbar {
             width: 8px;
         }
@@ -51,13 +52,16 @@
             border-radius: 4px;
         }
         
+        /* Hero Section Arka Planı ve Gradyan */
         .hero-gradient {
+            /* Placeholder image - Replace with a high-quality Maja image */
             background: linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.8)), url('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
         }
 
+        /* Bölüm Başlığı Alt Çizgisi */
         .section-header::after {
             content: '';
             display: block;
@@ -67,6 +71,7 @@
             margin-top: 1rem;
         }
 
+        /* Scroll Reveal Animasyonu */
         .reveal {
             opacity: 0;
             transform: translateY(30px);
@@ -107,6 +112,7 @@
                 <a href="#rekabet" class="block text-slate-600 hover:text-brand-gold">Rekabet</a>
                 <a href="#swot" class="block text-slate-600 hover:text-brand-gold">SWOT</a>
                 <a href="#strateji" class="block text-slate-600 hover:text-brand-gold">Dijital Strateji</a>
+                <a href="#takvim" class="block text-slate-600 hover:text-brand-gold">Takvim</a>
                 <a href="#kpi" class="block text-slate-600 hover:text-brand-gold">KPI & Sonuç</a>
             </div>
         </div>
@@ -151,8 +157,8 @@
                         <div class="flex items-center space-x-3 p-4 bg-slate-50 rounded-lg border border-slate-100">
                             <i class="fa-solid fa-star text-brand-gold text-2xl"></i>
                             <div>
-                                <div class="font-bold text-brand-dark">#163 Sıra</div>
-                                <div class="text-xs text-slate-500">Çeşme Bölgesi (TripAdvisor)</div>
+                                <div class="font-bold text-brand-dark">3.5/5</div>
+                                <div class="text-xs text-slate-500">TripAdvisor Puanı (Başlangıç)</div>
                             </div>
                         </div>
                     </div>
@@ -165,14 +171,16 @@
                 </div>
             </div>
 
-            <!-- Mevcut Durum Kartları -->
+            <!-- Mevcut Durum Kartları (Statistik Eklendi) -->
             <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 reveal">
                 <div class="bg-slate-50 p-8 rounded-xl border-t-4 border-brand-gold shadow-sm hover:shadow-md transition">
-                    <h3 class="font-bold text-xl mb-3 text-brand-dark"><i class="fa-solid fa-chart-line mr-2"></i>Mevcut Durum</h3>
-                    <p class="text-sm text-slate-600">2024 yazı doluluk oranlarında sektör geneli düşüş yaşandı. Maja, genç kitlede popüler olsa da aile ve üst segment memnuniyetinde dalgalanmalar mevcut. TripAdvisor puanı 3.5/5 seviyesinde.</p>
+                    <h3 class="font-bold text-xl mb-3 text-brand-dark"><i class="fa-solid fa-chart-line mr-2"></i>Mevcut Durum & Veri</h3>
+                    <p class="text-sm text-slate-600">
+                        2024 yazı doluluk oranlarında sektör geneli düşüş yaşandı. Genç yetişkinler (25-34 yaş) toplam rezervasyonların <strong>%55'ini oluşturmakta</strong>, ancak bu kitle otelin eğlence yönüne daha çok odaklanmaktadır. Ortalama konaklama süresi <strong>2.8 gecedir</strong>.
+                    </p>
                 </div>
                 <div class="bg-slate-50 p-8 rounded-xl border-t-4 border-blue-800 shadow-sm hover:shadow-md transition">
-                    <h3 class="font-bold text-xl mb-3 text-brand-dark"><i class="fa-solid fa-bullseye mr-2"></i>Birincil Hedefler</h3>
+                    <h3 class="font-bold text-xl mb-3 text-brand-dark"><i class="fa-solid fa-bullseye mr-2"></i>Birincil Hedefler (2025)</h3>
                     <ul class="text-sm text-slate-600 space-y-2 list-disc list-inside">
                         <li>Direkt rezervasyonlarda %20-30 artış.</li>
                         <li>TripAdvisor puanını 4.0+ seviyesine çekmek.</li>
@@ -183,7 +191,7 @@
                     <h3 class="font-bold text-xl mb-3 text-brand-dark"><i class="fa-solid fa-users mr-2"></i>Hedef Kitle</h3>
                     <p class="text-sm text-slate-600">
                         <strong>Yurt İçi:</strong> İstanbul, Ankara, İzmir (Orta-Üst Gelir).<br>
-                        <strong>Yurt Dışı:</strong> Almanya, İngiltere, Orta Doğu.<br>
+                        <strong>Yurt Dışı:</strong> Almanya, İngiltere, Orta Doğu (Özellikle BAE).<br>
                         <strong>Segmentler:</strong> Balayı çiftleri, Genç yetişkinler, Lüks arayan aileler.
                     </p>
                 </div>
@@ -254,8 +262,12 @@
                 </div>
             </div>
             
+            <!-- Konumlandırma Stratejisi (İstatistik Eklendi) -->
             <div class="mt-12 p-6 bg-brand-dark rounded-xl text-white text-center reveal">
-                <p class="font-serif text-xl italic">"Maja, rakiplerine göre daha butik, daha modern ve 'lifestyle' odaklı. Hem eğlenceyi hem huzuru arayan niş kitle hedeflenmeli."</p>
+                <p class="font-serif text-xl italic mb-3">
+                    "Maja, rakiplerine göre daha butik, daha modern ve 'lifestyle' odaklı. Mevcut durumda direkt rezervasyon oranı %22 iken (sektör ortalaması %35), hedefimiz butik kimliğini öne çıkararak bu farkı kapatmaktır."
+                </p>
+                <span class="text-xs text-brand-gold font-medium uppercase">Hedef: %30 Direkt Rezervasyon Oranı</span>
             </div>
         </div>
     </section>
@@ -456,80 +468,110 @@
             <h2 class="font-serif text-3xl md:text-4xl font-bold text-center text-brand-dark mb-12 reveal">Hedeflenen Başarı Metrikleri (KPI)</h2>
 
             <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center reveal">
+                <!-- KPI 1: Direkt Rezervasyon -->
                 <div class="p-6 bg-white rounded-xl shadow-sm hover:shadow-lg transition transform hover:-translate-y-1">
                     <div class="text-4xl font-bold text-brand-gold mb-2">%30</div>
-                    <div class="text-sm text-slate-500 uppercase tracking-wide">Direkt Rezervasyon Artışı</div>
+                    <div class="text-sm text-slate-500 uppercase tracking-wide">Direkt Rezervasyon Oranı</div>
                 </div>
+                
+                <!-- KPI 2: İtibar Puanı -->
                 <div class="p-6 bg-white rounded-xl shadow-sm hover:shadow-lg transition transform hover:-translate-y-1">
                     <div class="text-4xl font-bold text-brand-blue mb-2">4.0+</div>
                     <div class="text-sm text-slate-500 uppercase tracking-wide">TripAdvisor Puan Hedefi</div>
                 </div>
+
+                <!-- KPI 3: Web Trafiği -->
                 <div class="p-6 bg-white rounded-xl shadow-sm hover:shadow-lg transition transform hover:-translate-y-1">
                     <div class="text-4xl font-bold text-green-600 mb-2">%50+</div>
-                    <div class="text-sm text-slate-500 uppercase tracking-wide">Web Trafiği & Bilinirlik</div>
+                    <div class="text-sm text-slate-500 uppercase tracking-wide">Web Trafiği Artışı (Organik)</div>
                 </div>
-                <div class="p-6 bg-white rounded-xl shadow-sm hover:shadow-lg transition transform hover:-translate-y-1">
-                    <div class="text-4xl font-bold text-purple-600 mb-2">5-8x</div>
-                    <div class="text-sm text-slate-500 uppercase tracking-wide">ROAS (Reklam Getirisi)</div>
-                </div>
-            </div>
 
-            <div class="mt-16 text-center reveal">
-                <h3 class="font-serif text-2xl font-bold text-brand-dark mb-4">Sonuç ve Öneri</h3>
-                <p class="max-w-3xl mx-auto text-slate-600 mb-8">
-                    Maja Luxury Hotel, doğru dijital strateji ve operasyonel iyileştirmelerle Çeşme'nin en gözde lifestyle oteli olma potansiyeline sahiptir. 
-                    Pazarlama vaadi ile misafir deneyimi eşleştiğinde, marka değeri katlanarak artacaktır.
-                </p>
-                <a href="#" class="inline-block bg-brand-dark text-white px-8 py-3 rounded-md font-medium hover:bg-slate-800 transition">
-                    Stratejiyi Başlat <i class="fa-solid fa-rocket ml-2"></i>
-                </a>
+                <!-- KPI 4: Ortalama Konaklama Süresi -->
+                <div class="p-6 bg-white rounded-xl shadow-sm hover:shadow-lg transition transform hover:-translate-y-1">
+                    <div class="text-4xl font-bold text-red-500 mb-2">3.2+</div>
+                    <div class="text-sm text-slate-500 uppercase tracking-wide">Ortalama Konaklama Süresi (Gece)</div>
+                </div>
             </div>
         </div>
     </section>
 
+    <!-- Section 7: Sonuç ve Kapanış -->
+    <section id="sonuc" class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center reveal">
+            <h2 class="font-serif text-4xl font-bold text-brand-dark mb-6">Başarıya Giden Yol</h2>
+            <p class="text-lg text-slate-600 mb-8 leading-relaxed">
+                Maja Luxury Hotel Çeşme, butik lüks kimliğini dijitalde netleştirmeli, hizmet kalitesini standardize etmeli ve web sitesini uluslararası pazarlara açmalıdır. Bu bütüncül strateji ile, 1 yıl içinde Çeşme'nin en prestijli "Lifestyle Resort" markalarından biri haline gelebilir.
+            </p>
+            <a href="#strateji" class="inline-flex items-center bg-brand-dark text-white px-8 py-4 rounded-full font-medium hover:bg-brand-blue transition duration-300 shadow-xl shadow-brand-dark/30">
+                <i class="fa-solid fa-arrow-up-right-dots mr-3"></i>
+                Stratejik Uygulama İçin Başlayın
+            </a>
+        </div>
+    </section>
+
     <!-- Footer -->
-    <footer class="bg-brand-dark text-white py-12 border-t border-slate-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center">
-            <div class="mb-4 md:mb-0">
-                <span class="font-serif text-2xl font-bold tracking-wide">MAJA <span class="text-brand-gold">LUXURY</span></span>
-                <p class="text-sm text-slate-400 mt-2">More Dijital Ajans © 2025</p>
-            </div>
-            <div class="flex space-x-6">
-                <a href="#" class="text-slate-400 hover:text-white transition"><i class="fa-brands fa-instagram text-xl"></i></a>
-                <a href="#" class="text-slate-400 hover:text-white transition"><i class="fa-brands fa-linkedin text-xl"></i></a>
-                <a href="#" class="text-slate-400 hover:text-white transition"><i class="fa-solid fa-envelope text-xl"></i></a>
+    <footer class="bg-brand-dark py-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-slate-400">
+            <p class="text-lg font-serif mb-2 text-white">MAJA LUXURY HOTEL ÇEŞME</p>
+            <p class="text-sm">Dijital Pazarlama Stratejisi Raporu | © 2025 More Dijital Ajans</p>
+            <div class="mt-4 flex justify-center space-x-6">
+                <a href="#" class="hover:text-brand-gold transition"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="hover:text-brand-gold transition"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#" class="hover:text-brand-gold transition"><i class="fa-solid fa-globe"></i></a>
             </div>
         </div>
     </footer>
 
-    <!-- Scripts -->
+    <!-- JavaScript for Interactivity -->
     <script>
-        // Scroll Reveal Animation
-        function reveal() {
-            var reveals = document.querySelectorAll(".reveal");
-            for (var i = 0; i < reveals.length; i++) {
-                var windowHeight = window.innerHeight;
-                var elementTop = reveals[i].getBoundingClientRect().top;
-                var elementVisible = 150;
-                if (elementTop < windowHeight - elementVisible) {
-                    reveals[i].classList.add("active");
-                }
-            }
-        }
-        window.addEventListener("scroll", reveal);
-        // Trigger once on load
-        reveal();
+        document.addEventListener('DOMContentLoaded', () => {
+            // --- Scroll Reveal Logic ---
+            const revealElements = document.querySelectorAll('.reveal');
 
-        // Navbar Transition
-        window.addEventListener("scroll", function() {
-            var nav = document.getElementById("navbar");
-            if (window.scrollY > 50) {
-                nav.classList.add("shadow-lg");
-                nav.classList.replace("py-4", "py-2");
-            } else {
-                nav.classList.remove("shadow-lg");
-                nav.classList.replace("py-2", "py-4");
+            // İlk elementi manuel olarak aktif et (Hero Section)
+            const heroText = document.querySelector('.hero-gradient .reveal');
+            if (heroText) {
+                heroText.classList.add('active');
             }
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // Eğer element zaten görünürse ve delay tanımlıysa, gecikmeyle aktif et
+                        const delay = entry.target.dataset.delay || 0;
+                        setTimeout(() => {
+                            entry.target.classList.add('active');
+                            observer.unobserve(entry.target); // Bir kez gösterildikten sonra takibi bırak
+                        }, delay);
+                    }
+                });
+            }, {
+                threshold: 0.1 // Elementin %10'u göründüğünde tetikle
+            });
+
+            revealElements.forEach(el => {
+                if (el !== heroText) { // Hero'yu tekrar gözlemleme
+                    observer.observe(el);
+                }
+            });
+
+            // --- Navbar Scroll Shadow & Size Transition ---
+            const navbar = document.getElementById('navbar');
+            const toggleNavbarStyle = () => {
+                if (window.scrollY > 50) {
+                    navbar.classList.remove('py-4');
+                    navbar.classList.add('py-3', 'shadow-xl');
+                } else {
+                    navbar.classList.remove('py-3', 'shadow-xl');
+                    navbar.classList.add('py-4');
+                }
+            };
+            
+            // Sayfa yüklendiğinde bir kez çalıştır
+            toggleNavbarStyle();
+
+            // Scroll olayında sürekli çalıştır
+            window.addEventListener('scroll', toggleNavbarStyle);
         });
     </script>
 </body>
